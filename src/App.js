@@ -1,8 +1,5 @@
 import React from 'react';
 
-// import Cards from './components/Cards/Cards';
-// import Chart from './components/Chart/Chart';
-// import CountryPicker from './components/CountryPicker/CountryPicker';
 import { Cards, Chart, CountryPicker } from './components';
 import { fetchData } from './api';
 
@@ -11,7 +8,6 @@ import styles from './App.module.css';
 import coronaImage from './images/covid-19.png';
 
 class App extends React.Component {
-	// constructor() is already used in the back-end automatically by React.
 	state = {
 		data: {},
 		country: '',
@@ -36,10 +32,10 @@ class App extends React.Component {
 	}
 
 	render() {
-		const { data, country } = this.state;	// destructering
+		const { data, country } = this.state;	
 		
 		return (
-			<div className={styles.container}>	{/* this neat trick makes sure that this style only applies to 'App */}
+			<div className={styles.container}>	
 				<img className={styles.image} src={coronaImage} alt="COVID-19"/>
 				<Cards data={data} />
 				<CountryPicker handleCountryChange={this.handleCountryChange} />
